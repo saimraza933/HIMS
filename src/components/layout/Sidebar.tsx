@@ -388,13 +388,13 @@ const Sidebar = ({
     const mainSections = [
       { path: "/pharmacy-dashboard", id: "pharmacy-dashboard" },
       { path: "/opd-dashboard", id: "opd-dashboard" },
-      { path: "/ipd-dashboard", id: "ipd-dashboard" },
-      { path: "/lab-dashboard", id: "lab-dashboard" },
-      { path: "/laboratory", id: "laboratory" },
-      { path: "/modules", id: "modules" },
-      { path: "/settings", id: "settings" },
-      { path: "/help", id: "help" },
-      { path: "/docs", id: "documentation" },
+      // { path: "/ipd-dashboard", id: "ipd-dashboard" },
+      // { path: "/lab-dashboard", id: "lab-dashboard" },
+      // { path: "/laboratory", id: "laboratory" },
+      // { path: "/modules", id: "modules" },
+      // { path: "/settings", id: "settings" },
+      // { path: "/help", id: "help" },
+      // { path: "/docs", id: "documentation" },
     ];
 
     const exactMatch = mainSections.find((section) => section.path === path);
@@ -405,16 +405,16 @@ const Sidebar = ({
 
     // Check for section prefixes
     const sectionPrefixes = [
-      { prefix: "/records", id: "records" },
-      { prefix: "/security", id: "security" },
-      { prefix: "/patients", id: "patients" },
-      { prefix: "/doctors", id: "doctors" },
+      // { prefix: "/records", id: "records" },
+      // { prefix: "/security", id: "security" },
+      // { prefix: "/patients", id: "patients" },
+      // { prefix: "/doctors", id: "doctors" },
       { prefix: "/opd", id: "opd" },
-      { prefix: "/ipd", id: "ipd" },
+      // { prefix: "/ipd", id: "ipd" },
       { prefix: "/pharmacy", id: "pharmacy" },
-      { prefix: "/lab", id: "lab" },
-      { prefix: "/laboratory", id: "laboratory" },
-      { prefix: "/billing", id: "billing" },
+      // { prefix: "/lab", id: "lab" },
+      // { prefix: "/laboratory", id: "laboratory" },
+      // { prefix: "/billing", id: "billing" },
     ];
 
     const prefixMatch = sectionPrefixes.find((section) =>
@@ -426,7 +426,7 @@ const Sidebar = ({
     }
 
     // Default to dashboard if no match
-    setActiveItem("dashboard");
+    setActiveItem("opd-dashboard");
   }, [location.pathname]);
 
   const handleNavClick = (itemId: string) => {
@@ -445,12 +445,12 @@ const Sidebar = ({
   };
 
   const navItems = [
-    {
-      id: "dashboard",
-      label: "Admin Dashboard",
-      icon: <LayoutDashboard size={20} />,
-      href: "/",
-    },
+    // {
+    //   id: "dashboard",
+    //   label: "Admin Dashboard",
+    //   icon: <LayoutDashboard size={20} />,
+    //   href: "/",
+    // },
     {
       id: "pharmacy-dashboard",
       label: "Pharmacy Dashboard",
@@ -463,42 +463,43 @@ const Sidebar = ({
       icon: <Stethoscope size={20} />,
       href: "/opd-dashboard",
     },
-    {
-      id: "ipd-dashboard",
-      label: "IPD Dashboard",
-      icon: <BedDouble size={20} />,
-      href: "/ipd-dashboard",
-    },
-    {
-      id: "lab-dashboard",
-      label: "Lab Dashboard",
-      icon: <FlaskConical size={20} />,
-      href: "/lab-dashboard",
-    },
-    {
-      id: "laboratory",
-      label: "Laboratory Management",
-      icon: <TestTube size={20} />,
-      subItems: [
-        { id: "dashboard", label: "Dashboard", href: "/laboratory" },
-        { id: "tests", label: "Test Catalog", href: "/laboratory/tests" },
-        {
-          id: "orders",
-          label: "Order Management",
-          href: "/laboratory/orders",
-        },
-        {
-          id: "samples",
-          label: "Sample Management",
-          href: "/laboratory/samples",
-        },
-        { id: "results", label: "Results Entry", href: "/laboratory/results" },
-        { id: "reports", label: "Reports", href: "/laboratory/reports" },
-        { id: "packages", label: "Packages", href: "/laboratory/packages" },
-        { id: "machines", label: "Machines", href: "/laboratory/machines" },
-        { id: "settings", label: "Settings", href: "/laboratory/settings" },
-      ],
-    },
+    // {
+    //   id: "ipd-dashboard",
+    //   label: "IPD Dashboard",
+    //   icon: <BedDouble size={20} />,
+    //   href: "/ipd-dashboard",
+    // },
+    // {
+    //   id: "lab-dashboard",
+    //   label: "Lab Dashboard",
+    //   icon: <FlaskConical size={20} />,
+    //   href: "/lab-dashboard",
+    // },
+    // {
+    //   id: "laboratory",
+    //   label: "Laboratory Management",
+    //   icon: <TestTube size={20} />,
+    //   subItems: [
+    //     { id: "dashboard", label: "Dashboard", href: "/laboratory" },
+    //     { id: "tests", label: "Test Catalog", href: "/laboratory/tests" },
+    //     {
+    //       id: "orders",
+    //       label: "Order Management",
+    //       href: "/laboratory/orders",
+    //     },
+    //     {
+    //       id: "samples",
+    //       label: "Sample Management",
+    //       href: "/laboratory/samples",
+    //     },
+    //     { id: "results", label: "Results Entry", href: "/laboratory/results" },
+    //     { id: "reports", label: "Reports", href: "/laboratory/reports" },
+    //     { id: "packages", label: "Packages", href: "/laboratory/packages" },
+    //     { id: "machines", label: "Machines", href: "/laboratory/machines" },
+    //     { id: "settings", label: "Settings", href: "/laboratory/settings" },
+    //   ],
+    // },
+    
     {
       id: "patients",
       label: "Patient Management",
@@ -507,20 +508,20 @@ const Sidebar = ({
         { id: "management", label: "Management", href: "/patients/management" },
       ],
     },
-    {
-      id: "doctors",
-      label: "Doctor Management",
-      icon: <Stethoscope size={20} />,
-      subItems: [
-        { id: "management", label: "Management", href: "/doctors" },
-        { id: "scheduling", label: "Scheduling", href: "/doctors/scheduling" },
-        {
-          id: "appointments",
-          label: "Appointments",
-          href: "/doctors/appointments",
-        },
-      ],
-    },
+    // {
+    //   id: "doctors",
+    //   label: "Doctor Management",
+    //   icon: <Stethoscope size={20} />,
+    //   subItems: [
+    //     { id: "management", label: "Management", href: "/doctors" },
+    //     { id: "scheduling", label: "Scheduling", href: "/doctors/scheduling" },
+    //     {
+    //       id: "appointments",
+    //       label: "Appointments",
+    //       href: "/doctors/appointments",
+    //     },
+    //   ],
+    // },
     {
       id: "opd",
       label: "OPD",
@@ -540,34 +541,34 @@ const Sidebar = ({
         { id: "billing", label: "OPD Billing", href: "/opd/billing" },
       ],
     },
-    {
-      id: "ipd",
-      label: "IPD",
-      icon: <BedDouble size={20} />,
-      subItems: [
-        { id: "dashboard", label: "Dashboard", href: "/ipd" },
-        { id: "wards", label: "Wards", href: "/ipd/wards" },
-        { id: "rooms", label: "Rooms", href: "/ipd/rooms" },
-        { id: "beds", label: "Beds", href: "/ipd/beds" },
-        { id: "services", label: "Services", href: "/ipd/services" },
-        {
-          id: "treatments",
-          label: "Patient Treatments",
-          href: "/ipd/treatments",
-        },
-        { id: "billing", label: "Billing", href: "/ipd/billing" },
-        {
-          id: "death-certificate",
-          label: "Death Certificate",
-          href: "/ipd/death-certificate",
-        },
-        {
-          id: "birth-certificate",
-          label: "Birth Certificate",
-          href: "/ipd/birth-certificate",
-        },
-      ],
-    },
+    // {
+    //   id: "ipd",
+    //   label: "IPD",
+    //   icon: <BedDouble size={20} />,
+    //   subItems: [
+    //     { id: "dashboard", label: "Dashboard", href: "/ipd" },
+    //     { id: "wards", label: "Wards", href: "/ipd/wards" },
+    //     { id: "rooms", label: "Rooms", href: "/ipd/rooms" },
+    //     { id: "beds", label: "Beds", href: "/ipd/beds" },
+    //     { id: "services", label: "Services", href: "/ipd/services" },
+    //     {
+    //       id: "treatments",
+    //       label: "Patient Treatments",
+    //       href: "/ipd/treatments",
+    //     },
+    //     { id: "billing", label: "Billing", href: "/ipd/billing" },
+    //     {
+    //       id: "death-certificate",
+    //       label: "Death Certificate",
+    //       href: "/ipd/death-certificate",
+    //     },
+    //     {
+    //       id: "birth-certificate",
+    //       label: "Birth Certificate",
+    //       href: "/ipd/birth-certificate",
+    //     },
+    //   ],
+    // },
     {
       id: "pharmacy",
       label: "Pharmacy",
@@ -585,77 +586,77 @@ const Sidebar = ({
         { id: "sales", label: "Sales", href: "/pharmacy/sales" },
       ],
     },
-    {
-      id: "records",
-      label: "Records & Definitions",
-      icon: <Database size={20} />,
-      subItems: [
-        { id: "categories", label: "Categories", href: "/records/categories" },
-        {
-          id: "departments",
-          label: "Departments",
-          href: "/records/departments",
-        },
-        { id: "companies", label: "Companies", href: "/records/companies" },
-        {
-          id: "warehouses",
-          label: "Warehouses",
-          href: "/records/warehouses",
-        },
-        { id: "banks", label: "Banks", href: "/records/banks" },
-        {
-          id: "uoms",
-          label: "Units of Measurement",
-          href: "/records/uoms",
-        },
-        { id: "forms", label: "Forms", href: "/records/forms" },
-        { id: "templates", label: "Templates", href: "/records/templates" },
-        { id: "reports", label: "Reports", href: "/records/reports" },
-      ],
-    },
-    {
-      id: "security",
-      label: "Security",
-      icon: <ShieldCheck size={20} />,
-      subItems: [
-        { id: "users", label: "User Management", href: "/security/users" },
-        { id: "roles", label: "Roles", href: "/security/roles" },
-        {
-          id: "permissions",
-          label: "Permissions",
-          href: "/security/permissions",
-        },
+    // {
+    //   id: "records",
+    //   label: "Records & Definitions",
+    //   icon: <Database size={20} />,
+    //   subItems: [
+    //     { id: "categories", label: "Categories", href: "/records/categories" },
+    //     {
+    //       id: "departments",
+    //       label: "Departments",
+    //       href: "/records/departments",
+    //     },
+    //     { id: "companies", label: "Companies", href: "/records/companies" },
+    //     {
+    //       id: "warehouses",
+    //       label: "Warehouses",
+    //       href: "/records/warehouses",
+    //     },
+    //     { id: "banks", label: "Banks", href: "/records/banks" },
+    //     {
+    //       id: "uoms",
+    //       label: "Units of Measurement",
+    //       href: "/records/uoms",
+    //     },
+    //     { id: "forms", label: "Forms", href: "/records/forms" },
+    //     { id: "templates", label: "Templates", href: "/records/templates" },
+    //     { id: "reports", label: "Reports", href: "/records/reports" },
+    //   ],
+    // },
+    // {
+    //   id: "security",
+    //   label: "Security",
+    //   icon: <ShieldCheck size={20} />,
+    //   subItems: [
+    //     { id: "users", label: "User Management", href: "/security/users" },
+    //     { id: "roles", label: "Roles", href: "/security/roles" },
+    //     {
+    //       id: "permissions",
+    //       label: "Permissions",
+    //       href: "/security/permissions",
+    //     },
         {
           id: "control-panel",
           label: "Control Panel",
           href: "/security/control-panel",
         },
-      ],
-    },
-    {
-      id: "modules",
-      label: "Modules",
-      icon: <Package size={20} />,
-      href: "/module-selection",
-    },
-    {
-      id: "settings",
-      label: "Settings",
-      icon: <Settings size={20} />,
-      href: "/settings",
-    },
-    {
-      id: "help",
-      label: "Help",
-      icon: <HelpCircle size={20} />,
-      href: "/help",
-    },
-    {
-      id: "documentation",
-      label: "Documentation",
-      icon: <FileText size={20} />,
-      href: "/docs",
-    },
+    //   ],
+    // },
+    // {
+    //   id: "modules",
+    //   label: "Modules",
+    //   icon: <Package size={20} />,
+    //   href: "/module-selection",
+    // },
+    // {
+    //   id: "settings",
+    //   label: "Settings",
+    //   icon: <Settings size={20} />,
+    //   href: "/settings",
+    // },
+    // {
+    //   id: "help",
+    //   label: "Help",
+    //   icon: <HelpCircle size={20} />,
+    //   href: "/help",
+    // },
+    // {
+    //   id: "documentation",
+    //   label: "Documentation",
+    //   icon: <FileText size={20} />,
+    //   href: "/docs",
+    // },
     {
       id: "logout",
       label: "Logout",
@@ -715,7 +716,7 @@ const Sidebar = ({
       <div
         className={cn(
           "hidden md:flex flex-col h-full border-r transition-all duration-300",
-          isCollapsed ? "w-[60px]" : "w-[280px]",
+          isCollapsed ? "w-[60px]" : "w-[240px]",
           className,
         )}
       >
